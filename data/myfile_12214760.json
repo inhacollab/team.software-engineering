@@ -1,0 +1,152 @@
+{
+    "users": [
+      {
+        "id": 101,
+        "name": "Alice Johnson",
+        "email": "alice.j@example.com",
+        "age": 29,
+        "is_active": true,
+        "membership": "gold",
+        "last_login": "2025-03-28T10:15:00Z",
+        "address": {
+          "city": "New York",
+          "zip": "10001",
+          "country": "USA"
+        },
+        "preferences": {
+          "language": "English",
+          "timezone": "UTC-5",
+          "notifications": {
+            "email": true,
+            "sms": false,
+            "push": true
+          }
+        },
+        "orders": [
+          {
+            "order_id": "A1001",
+            "date": "2024-11-21",
+            "total": 250.75,
+            "items": ["Laptop", "Mouse"]
+          }
+        ]
+      },
+      {
+        "id": 102,
+        "name": "Brian Lee",
+        "email": "brian.lee@example.com",
+        "age": 35,
+        "is_active": false,
+        "membership": "silver",
+        "last_login": "2025-02-15T08:00:00Z",
+        "address": {
+          "city": "Los Angeles",
+          "zip": "90001",
+          "country": "USA"
+        },
+        "preferences": {
+          "language": "Spanish",
+          "timezone": "UTC-8",
+          "notifications": {
+            "email": false,
+            "sms": true,
+            "push": false
+          }
+        },
+        "orders": []
+      },
+      {
+        "id": 103,
+        "name": "Carla Mendes",
+        "email": "carla.m@example.com",
+        "age": 27,
+        "is_active": true,
+        "membership": "platinum",
+        "last_login": "2025-03-30T22:05:00Z",
+        "address": {
+          "city": "Lisbon",
+          "zip": "1000-001",
+          "country": "Portugal"
+        },
+        "preferences": {
+          "language": "Portuguese",
+          "timezone": "UTC+0",
+          "notifications": {
+            "email": true,
+            "sms": true,
+            "push": true
+          }
+        },
+        "orders": [
+          {
+            "order_id": "B3002",
+            "date": "2025-01-12",
+            "total": 45.50,
+            "items": ["Notebook", "Pen"]
+          },
+          {
+            "order_id": "B3003",
+            "date": "2025-02-01",
+            "total": 330.00,
+            "items": ["Tablet"]
+          }
+        ]
+      },
+      {
+        "id": 104,
+        "name": "Dinesh Kumar",
+        "email": "dinesh.k@example.com",
+        "age": 31,
+        "is_active": true,
+        "membership": "basic",
+        "last_login": "2025-03-10T12:00:00Z",
+        "address": {
+          "city": "Mumbai",
+          "zip": "400001",
+          "country": "India"
+        },
+        "preferences": {
+          "language": "Hindi",
+          "timezone": "UTC+5:30",
+          "notifications": {
+            "email": false,
+            "sms": true,
+            "push": false
+          }
+        },
+        "orders": []
+      },
+      {
+        "id": 105,
+        "name": "Emma Wilson",
+        "email": "emma.w@example.com",
+        "age": 40,
+        "is_active": false,
+        "membership": "silver",
+        "last_login": "2025-01-25T17:30:00Z",
+        "address": {
+          "city": "London",
+          "zip": "EC1A 1BB",
+          "country": "UK"
+        },
+        "preferences": {
+          "language": "English",
+          "timezone": "UTC+0",
+          "notifications": {
+            "email": true,
+            "sms": false,
+            "push": false
+          }
+        },
+        "orders": [
+          {
+            "order_id": "C5001",
+            "date": "2024-12-10",
+            "total": 99.99,
+            "items": ["Bluetooth Speaker"]
+          }
+        ]
+      }
+    ]
+  }
+  
