@@ -14,7 +14,7 @@ This project demonstrates working with JSON data in Python. It includes a script
 2. Place the JSON file in the `data` directory.
 3. Run the script using the following command:
    ```bash
-   python parsejson.py
+   python3 parsejson.py
    ```
 4. The script will output the `access_token` and its expiration time.
 
