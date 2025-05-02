@@ -222,6 +222,7 @@ function showLocationOptions(locations) {
 
         const selectedRadio = selectionForm.querySelector('input[name="selected-location"]:checked');
         const selectedLocation = selectedRadio.value;
+        const locationName = selectedRadio.dataset.locationName;
 
         // Get current coordinates (we already have them from previous step)
         let userCoordinates;
@@ -267,8 +268,15 @@ function showLocationOptions(locations) {
             // Log the response to console
             console.log('Road information response:', result);
 
-            // Show success message to user
-            alert(`Your journey to ${selectedLocation} has been confirmed!`);
+            // Instead of showing an alert, we'll let the route_map.js handle the display
+            // This event will be captured by route_map.js to display the map
+            const routeEvent = new CustomEvent('routeDataReceived', {
+                detail: {
+                    routeData: result,
+                    locationName: locationName
+                }
+            });
+            document.dispatchEvent(routeEvent);
 
         } catch (error) {
             console.error('Error submitting location selection:', error);

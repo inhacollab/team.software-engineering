@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leisure | Time to Explore</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', path='/user_form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/style/user_form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/style/route_map.css') }}">
 </head>
 <body>
     <!-- Background Effects -->
@@ -157,6 +158,7 @@
         </section>
     </main>
 
-    <script src="{{ url_for('static', path='/user_form.js') }}"></script>
+    <script src="{{ url_for('static', path='/logic/user_form.js') }}"></script>
+    <script src="{{ url_for('static', path='/logic/route_map.js') }}"></script>
 </body>
 </html>
