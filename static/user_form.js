@@ -159,19 +159,146 @@ function showLocationOptions(locations) {
     // Clear previous options
     locationCards.innerHTML = '';
 
-    // Populate new options
-    locations.forEach(location => {
+    // Create form container
+    const selectionForm = document.createElement('form');
+    selectionForm.id = 'location-selection-form';
+    selectionForm.className = 'location-selection-form';
+
+    // Add form heading
+    const formIntro = document.createElement('div');
+    formIntro.className = 'location-form-intro';
+    formIntro.innerHTML = `
+        <p>Based on your preferences, we've found these exciting options for you. Select the destination that catches your interest.</p>
+    `;
+    selectionForm.appendChild(formIntro);
+
+    // Populate location options
+    locations.forEach((location, index) => {
         const card = document.createElement('div');
         card.className = 'location-card';
-        card.innerHTML = `
+
+        const radioInput = document.createElement('input');
+        radioInput.type = 'radio';
+        radioInput.name = 'selected-location';
+        radioInput.id = `location-${index}`;
+        radioInput.value = location.location;
+        radioInput.dataset.locationName = location.location;
+        radioInput.className = 'location-radio';
+        // Make first option selected by default
+        if (index === 0) {
+            radioInput.checked = true;
+        }
+
+        const label = document.createElement('label');
+        label.htmlFor = `location-${index}`;
+        label.className = 'location-label';
+
+        const locationContent = document.createElement('div');
+        locationContent.className = 'location-content';
+        locationContent.innerHTML = `
             <h3>${location.location}</h3>
             <p>${location.description}</p>
         `;
-        locationCards.appendChild(card);
+
+        label.appendChild(locationContent);
+        card.appendChild(radioInput);
+        card.appendChild(label);
+        selectionForm.appendChild(card);
     });
 
-    // Display the section
+    // Add confirm button
+    const confirmButton = document.createElement('button');
+    confirmButton.type = 'submit';
+    confirmButton.className = 'submit-button confirm-location-button';
+    confirmButton.innerHTML = `
+        <span class="button-text">Confirm Selection</span>
+        <div class="button-glow"></div>
+    `;
+    selectionForm.appendChild(confirmButton);
+
+    // Add event listener for form submission
+    selectionForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const selectedRadio = selectionForm.querySelector('input[name="selected-location"]:checked');
+        const selectedLocation = selectedRadio.value;
+
+        // Get current coordinates (we already have them from previous step)
+        let userCoordinates;
+        try {
+            const position = await new Promise((resolve, reject) => {
+                navigator.geolocation.getCurrentPosition(resolve, reject);
+            });
+            userCoordinates = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+        } catch (error) {
+            console.error('Error getting location:', error);
+            alert('Unable to retrieve your location.');
+            return;
+        }
+
+        // UI feedback
+        const originalText = confirmButton.querySelector('.button-text').textContent;
+        confirmButton.disabled = true;
+        confirmButton.querySelector('.button-text').textContent = 'Processing...';
+
+        try {
+            // Send the location choice to the backend
+            const response = await fetch('user-road/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    lat: userCoordinates.lat,
+                    lng: userCoordinates.lng,
+                    name: selectedLocation
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+
+            // Log the response to console
+            console.log('Road information response:', result);
+
+            // Show success message to user
+            alert(`Your journey to ${selectedLocation} has been confirmed!`);
+
+        } catch (error) {
+            console.error('Error submitting location selection:', error);
+            alert(`Error: ${error.message}`);
+        } finally {
+            // Reset button state
+            confirmButton.disabled = false;
+            confirmButton.querySelector('.button-text').textContent = originalText;
+        }
+    });
+
+    // Add the form to the location cards container
+    locationCards.appendChild(selectionForm);
+
+    // Display the section with animation
     locationOptions.style.display = 'block';
+    locationOptions.style.opacity = '0';
+    locationOptions.style.transform = 'translateY(20px)';
+
+    // Animate in
+    setTimeout(() => {
+        locationOptions.style.transition = 'all 0.6s ease';
+        locationOptions.style.opacity = '1';
+        locationOptions.style.transform = 'translateY(0)';
+    }, 300);
+
+    // Scroll to options section
+    setTimeout(() => {
+        locationOptions.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 400);
 }
 
 // Setup form submission
