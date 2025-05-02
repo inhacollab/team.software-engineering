@@ -2,18 +2,32 @@ from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
+from fastapi.middleware.cors import CORSMiddleware
 import os
 from dotenv import load_dotenv
-from .api import endpoints
+import sys
 
+# Add parent directory to path to make imports work
+sys.path.append(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+)
+
+# Load environment variables
 load_dotenv()
+
 app = FastAPI()
 
-# Mount API routers
-app.include_router(endpoints.router, prefix="/endpoints", tags=["endpoints"])
+# Enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Get base directory
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Serve static files and templates
 app.mount(
@@ -28,8 +42,13 @@ async def read_root(request: Request):
     return templates.TemplateResponse("user_form.html", {"request": request})
 
 
-# For local development
+# Import endpoints
+from src.api.endpoints import router
+
+app.include_router(router)
+
+# For testing locally
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("src.main:app", host="localhost", port=10002, reload=True)
+    uvicorn.run("api:app", host="0.0.0.0", port=8000, reload=True)

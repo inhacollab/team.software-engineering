@@ -222,9 +222,9 @@ function showLocationOptions(locations) {
 
         const selectedRadio = selectionForm.querySelector('input[name="selected-location"]:checked');
         const selectedLocation = selectedRadio.value;
-        const locationName = selectedRadio.dataset.locationName;
+        const locationName = selectedRadio.dataset.locationName || selectedLocation;
 
-        // Get current coordinates (we already have them from previous step)
+        // Get current coordinates
         let userCoordinates;
         try {
             const position = await new Promise((resolve, reject) => {
@@ -268,8 +268,7 @@ function showLocationOptions(locations) {
             // Log the response to console
             console.log('Road information response:', result);
 
-            // Instead of showing an alert, we'll let the route_map.js handle the display
-            // This event will be captured by route_map.js to display the map
+            // Dispatch custom event with route data for the map component
             const routeEvent = new CustomEvent('routeDataReceived', {
                 detail: {
                     routeData: result,
