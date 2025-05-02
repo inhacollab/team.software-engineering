@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leisure | Time to Explore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='/user_form.css') }}">
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="background-gradient"></div>
+    <div class="animated-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Leisure</div>
+        <div class="nav-links">
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Explore</a>
+            <a href="#" class="nav-link nav-cta">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="hero-section">
+            <h1 class="hero-title">
+                <span class="title-line">Plan your perfect</span>
+                <span class="title-line gradient-text">escape</span>
+            </h1>
+            <p class="hero-subtitle">Tell us when you're free, and we'll help you discover what's possible.</p>
+        </section>
+
+        <section class="form-section">
+            <div class="form-card">
+                <form id="leisure-form">
+                    <!-- Date Input -->
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="date" id="availability-date" class="form-input" required>
+                            <label for="availability-date" class="form-label">When are you free?</label>
+                            <div class="input-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="input-hint">Choose a date for your adventure</div>
+                    </div>
+
+                    <!-- Time Range Selector -->
+                    <div class="form-group full-width">
+                        <label class="form-label static">What time are you available?</label>
+                        <div class="time-selector">
+                            <div class="time-track"></div>
+                            <div class="time-range-highlight"></div>
+                            <div class="time-handle time-handle-start" data-type="start">
+                                <div class="handle-tooltip">10:00</div>
+                            </div>
+                            <div class="time-handle time-handle-end" data-type="end">
+                                <div class="handle-tooltip">22:00</div>
+                            </div>
+                            <div class="time-labels">
+                                <span>12 AM</span>
+                                <span>6 AM</span>
+                                <span>12 PM</span>
+                                <span>6 PM</span>
+                                <span>12 AM</span>
+                            </div>
+                        </div>
+                        <div class="time-display">
+                            Selected: <span id="time-range-display">10:00 AM - 10:00 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- Distance and Duration Grid -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="number" id="distance" class="form-input" min="0.5" max="1000" step="0.5" required>
+                                <label for="distance" class="form-label">How far to explore? (km)</label>
+                                <div class="input-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="input-hint">Maximum distance you're willing to travel</div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="number" id="duration" class="form-input" min="0.5" max="48" step="0.5" required>
+                                <label for="duration" class="form-label">How many hours?</label>
+                                <div class="input-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="input-hint">Total time available for exploration</div>
+                        </div>
+                    </div>
+
+                    <!-- Destination Input -->
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="text" id="destination" class="form-input" placeholder=" ">
+                            <label for="destination" class="form-label">Specific destination in mind? (Optional)</label>
+                            <div class="input-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="input-hint">Leave blank to discover something new</div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-button">
+                        <span class="button-text">Plan My Adventure</span>
+                        <div class="button-glow"></div>
+                    </button>
+                </form>
+
+                <!-- Result Display -->
+                <div class="result-card" id="result-card">
+                    <div class="result-animation">
+                        <svg class="checkmark" width="52" height="52" viewBox="0 0 52 52">
+                            <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                            <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                        </svg>
+                    </div>
+                    <h3 class="result-title">Adventure Confirmed!</h3>
+                    <p class="result-message">Your leisure plan has been submitted successfully.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', path='/user_form.js') }}"></script>
+</body>
+</html>
