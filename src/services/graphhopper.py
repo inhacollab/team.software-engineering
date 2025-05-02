@@ -62,32 +62,32 @@ def _get_route(start, end):
         + dp
     )
     paths_data = response.json()
-    print(paths_data)
-    distance_m = paths_data["paths"][0]["distance"]
-    time_ms = paths_data["paths"][0]["time"]
-    miles = distance_m / 1000 / 1.61
-    km = distance_m / 1000
-    sec = int(time_ms / 1000 % 60)
-    min = int(time_ms / 1000 / 60 % 60)
-    hr = int(time_ms / 1000 / 60 / 60)
-    instructions = []
-    for each in range(len(paths_data["paths"][0]["instructions"])):
-        path = paths_data["paths"][0]["instructions"][each]["text"]
-        distance = paths_data["paths"][0]["instructions"][each]["distance"]
-        instructions.append(
-            {
-                "path": path,
-                "distance": distance,
-            }
-        )
-    return {
-        "distance_miles": miles,
-        "distance_km": km,
-        "duration_hours": hr,
-        "duration_minutes": min,
-        "duration_seconds": sec,
-        "instructions": instructions,
-    }
+    return paths_data
+    # distance_m = paths_data["paths"][0]["distance"]
+    # time_ms = paths_data["paths"][0]["time"]
+    # miles = distance_m / 1000 / 1.61
+    # km = distance_m / 1000
+    # sec = int(time_ms / 1000 % 60)
+    # min = int(time_ms / 1000 / 60 % 60)
+    # hr = int(time_ms / 1000 / 60 / 60)
+    # instructions = []
+    # for each in range(len(paths_data["paths"][0]["instructions"])):
+    #     path = paths_data["paths"][0]["instructions"][each]["text"]
+    #     distance = paths_data["paths"][0]["instructions"][each]["distance"]
+    #     instructions.append(
+    #         {
+    #             "path": path,
+    #             "distance": distance,
+    #         }
+    #     )
+    # return {
+    #     "distance_miles": miles,
+    #     "distance_km": km,
+    #     "duration_hours": hr,
+    #     "duration_minutes": min,
+    #     "duration_seconds": sec,
+    #     "instructions": instructions,
+    # }
 
 
 def get_trip_info(lat, lng, destination_name):

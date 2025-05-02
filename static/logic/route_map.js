@@ -4,6 +4,8 @@
 document.addEventListener('routeDataReceived', function(e) {
     const routeData = e.detail.routeData;
     const locationName = e.detail.locationName;
+	console.log('Route data received:', routeData);
+	console.log('Location name:', locationName);
 
     // Create or get route map section
     let routeMapSection = document.getElementById('route-map-section');
