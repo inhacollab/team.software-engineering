@@ -10,12 +10,16 @@ Leisure solves the common problem of "What should I do today?" by suggesting per
 - How far you're willing to travel
 - How much time you have available
 - Optional specific destination preferences
+
 ## Table of Contents
+
 - [Overview](#overview)
 - [Video Preview](#video-preview)
 - [Live Demo](#link-for-deployed-web-page)
 - [Team Members](#team-members)
 - [Team Contributions](#team-contributions)
+- [Features](#features)
+- [Local Development](#local-development)
 - [Core Technologies](#core-technologies)
     - [FastAPI Backend](#fastapi-backend)
     - [Gemini LLM Integration](#gemini-llm-integration)
@@ -24,8 +28,7 @@ Leisure solves the common problem of "What should I do today?" by suggesting per
 - [API Integration Flow](#api-integration-flow)
 - [Technology Details](#technology-details)
 - [Screenshots](#screenshots)
-- [Features](#features)
-- [Local Development](#local-development)
+
 ## Video Preview
 
 ![0503](https://github.com/user-attachments/assets/f027e685-c130-4952-bf48-1c060c6f1092)
@@ -70,6 +73,37 @@ Leisure solves the common problem of "What should I do today?" by suggesting per
 - Geolocation feature development
 - Responsive design optimization
 
+## Features
+
+- **Responsive Design**: Works seamlessly on both desktop and mobile devices
+- **Interactive Time Selector**: Visual slider for selecting available time ranges
+- **Location Discovery**: AI-powered suggestions based on user preferences
+- **Interactive Map**: Detailed routing with distance markers and elevation data
+- **Sharing Options**: Easy sharing of route information with others
+
+## Local Development
+
+### Prerequisites
+
+- Python 3.8+
+- GraphHopper API key
+- Google API key with Gemini access
+- Node.js (for Vercel CLI if deploying)
+
+### Installation
+
+1. Clone the repository:
+2. Install requirements
+
+    ```bash
+    pip install -r requirement.txt
+    ```
+
+3. Run project
+
+    ```bash
+    uvicorn src:app --host localhost --port 10002
+    ```
 
 ## Core Technologies
 
@@ -218,34 +252,3 @@ def _get_route(start, end):
 ![Route Display](./assets/images/map_illustration_3_step.png)
 *Interactive map showing the route to the selected destination*
 
-## Features
-
-- **Responsive Design**: Works seamlessly on both desktop and mobile devices
-- **Interactive Time Selector**: Visual slider for selecting available time ranges
-- **Location Discovery**: AI-powered suggestions based on user preferences
-- **Interactive Map**: Detailed routing with distance markers and elevation data
-- **Sharing Options**: Easy sharing of route information with others
-
-## Local Development
-
-### Prerequisites
-
-- Python 3.8+
-- GraphHopper API key
-- Google API key with Gemini access
-- Node.js (for Vercel CLI if deploying)
-
-### Installation
-
-1. Clone the repository:
-2. Install requirements
-
-    ```bash
-    pip install -r requirement.txt
-    ```
-
-3. Run project
-
-    ```bash
-    uvicorn src:app --host localhost --port 10002
-    ```
