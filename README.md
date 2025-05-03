@@ -176,3 +176,13 @@ def _get_route(start, end):
 ### Installation
 
 1. Clone the repository:
+2. Install requirements
+
+```bash
+pip install -r requirement.txt
+```
+3. Run project
+
+```bash
+uvicorn src:app --host localhost --port 10002
+```
