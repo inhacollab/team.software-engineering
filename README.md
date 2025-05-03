@@ -10,7 +10,22 @@ Leisure solves the common problem of "What should I do today?" by suggesting per
 - How far you're willing to travel
 - How much time you have available
 - Optional specific destination preferences
-
+## Table of Contents
+- [Overview](#overview)
+- [Video Preview](#video-preview)
+- [Live Demo](#link-for-deployed-web-page)
+- [Team Members](#team-members)
+- [Team Contributions](#team-contributions)
+- [Core Technologies](#core-technologies)
+    - [FastAPI Backend](#fastapi-backend)
+    - [Gemini LLM Integration](#gemini-llm-integration)
+    - [GraphHopper Routing API](#graphhopper-routing-api)
+- [User Flow](#user-flow)
+- [API Integration Flow](#api-integration-flow)
+- [Technology Details](#technology-details)
+- [Screenshots](#screenshots)
+- [Features](#features)
+- [Local Development](#local-development)
 ## Video Preview
 
 ![0503](https://github.com/user-attachments/assets/f027e685-c130-4952-bf48-1c060c6f1092)
