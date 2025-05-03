@@ -5,15 +5,105 @@ Leisure is an interactive web application that helps users discover and plan act
 ## Overview
 
 Leisure solves the common problem of "What should I do today?" by suggesting personalized leisure activities based on:
+
 - Date and time availability
 - How far you're willing to travel
 - How much time you have available
 - Optional specific destination preferences
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Video Preview](#video-preview)
+- [Live Demo](#link-for-deployed-web-page)
+- [Team Members](#team-members)
+- [Team Contributions](#team-contributions)
+- [Features](#features)
+- [Local Development](#local-development)
+- [Core Technologies](#core-technologies)
+    - [FastAPI Backend](#fastapi-backend)
+    - [Gemini LLM Integration](#gemini-llm-integration)
+    - [GraphHopper Routing API](#graphhopper-routing-api)
+- [User Flow](#user-flow)
+- [API Integration Flow](#api-integration-flow)
+- [Technology Details](#technology-details)
+- [Screenshots](#screenshots)
+
 ## Video Preview
+
 ![0503](https://github.com/user-attachments/assets/f027e685-c130-4952-bf48-1c060c6f1092)
 
 ## [Link for Deployed Web Page](https://teamsoftware-engineering.vercel.app/)
+
+## Team Members
+
+- **Javokhir Yuldoshev** (Team Leader) [12214760]
+- **Muhammedov Mironshoh** [12225252]
+- **Ilhomov Mansur** [12225247]
+- **Bakhtiyorov Firdavs** [12214762]
+
+## Team Contributions
+
+### Javokhir Yuldoshev (Team Leader)
+
+- Project architecture and team coordination
+- Core application logic implementation
+- API endpoint development and integration
+- Component integration and deployment
+- Documentation and best practices enforcement
+
+### Muhammedov Mironshoh
+
+- Gemini LLM integration specialist
+- Prompt engineering and optimization
+- Model selection and evaluation
+- Response processing and data transformation
+
+### Ilhomov Mansur
+
+- GraphHopper API integration lead
+- Routing service implementation
+- Error handling and service reliability
+- API performance optimization
+
+### Bakhtiyorov Firdavs
+
+- Frontend development lead
+- UI/UX design implementation
+- Geolocation feature development
+- Responsive design optimization
+
+## Features
+
+- **Responsive Design**: Works seamlessly on both desktop and mobile devices
+- **Interactive Time Selector**: Visual slider for selecting available time ranges
+- **Location Discovery**: AI-powered suggestions based on user preferences
+- **Interactive Map**: Detailed routing with distance markers and elevation data
+- **Sharing Options**: Easy sharing of route information with others
+
+## Local Development
+
+### Prerequisites
+
+- Python 3.8+
+- GraphHopper API key
+- Google API key with Gemini access
+- Node.js (for Vercel CLI if deploying)
+
+### Installation
+
+1. Clone the repository:
+2. Install requirements
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. Run project
+
+    ```bash
+    uvicorn src:app --host localhost --port 10002
+    ```
 
 ## Core Technologies
 
@@ -148,43 +238,17 @@ def _get_route(start, end):
 ## Screenshots
 
 ### User Input Form
+
 ![User Input Form](./assets/images/user_input_form_1_step.png)
 *The main form where users enter their availability and preferences*
 
 ### Location Selection
+
 ![Location Selection](./assets/images/location_selection_2_step.png)
 *The application suggests personalized options based on user input*
 
 ### Route Map Display
+
 ![Route Display](./assets/images/map_illustration_3_step.png)
 *Interactive map showing the route to the selected destination*
 
-## Features
-
-- **Responsive Design**: Works seamlessly on both desktop and mobile devices
-- **Interactive Time Selector**: Visual slider for selecting available time ranges
-- **Location Discovery**: AI-powered suggestions based on user preferences
-- **Interactive Map**: Detailed routing with distance markers and elevation data
-- **Sharing Options**: Easy sharing of route information with others
-
-## Local Development
-
-### Prerequisites
-- Python 3.8+
-- GraphHopper API key
-- Google API key with Gemini access
-- Node.js (for Vercel CLI if deploying)
-
-### Installation
-
-1. Clone the repository:
-2. Install requirements
-
-```bash
-pip install -r requirement.txt
-```
-3. Run project
-
-```bash
-uvicorn src:app --host localhost --port 10002
-```
