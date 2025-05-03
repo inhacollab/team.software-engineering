@@ -32,6 +32,45 @@ Leisure solves the common problem of "What should I do today?" by suggesting per
 
 ## [Link for Deployed Web Page](https://teamsoftware-engineering.vercel.app/)
 
+## Team Members
+
+- **Javokhir Yuldoshev** (Team Leader) [12214760]
+- **Muhammedov Mironshoh** [12225252]
+- **Ilhomov Mansur** [12225247]
+- **Bakhtiyorov Firdavs** [12214762]
+
+## Team Contributions
+
+### Javokhir Yuldoshev (Team Leader)
+
+- Project architecture and team coordination
+- Core application logic implementation
+- API endpoint development and integration
+- Component integration and deployment
+- Documentation and best practices enforcement
+
+### Muhammedov Mironshoh
+
+- Gemini LLM integration specialist
+- Prompt engineering and optimization
+- Model selection and evaluation
+- Response processing and data transformation
+
+### Ilhomov Mansur
+
+- GraphHopper API integration lead
+- Routing service implementation
+- Error handling and service reliability
+- API performance optimization
+
+### Bakhtiyorov Firdavs
+
+- Frontend development lead
+- UI/UX design implementation
+- Geolocation feature development
+- Responsive design optimization
+
+
 ## Core Technologies
 
 ### FastAPI Backend
