@@ -13,6 +13,8 @@ Leisure solves the common problem of "What should I do today?" by suggesting per
 ## Video Preview
 ![0503](https://github.com/user-attachments/assets/f027e685-c130-4952-bf48-1c060c6f1092)
 
+## [Link for Deployed Web Page](https://teamsoftware-engineering.vercel.app/)
+
 ## Core Technologies
 
 ### FastAPI Backend
