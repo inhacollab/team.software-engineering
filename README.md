@@ -96,7 +96,7 @@ Leisure solves the common problem of "What should I do today?" by suggesting per
 2. Install requirements
 
     ```bash
-    pip install -r requirement.txt
+    pip install -r requirements.txt
     ```
 
 3. Run project
