@@ -5,12 +5,14 @@ Leisure is an interactive web application that helps users discover and plan act
 ## Overview
 
 Leisure solves the common problem of "What should I do today?" by suggesting personalized leisure activities based on:
+
 - Date and time availability
 - How far you're willing to travel
 - How much time you have available
 - Optional specific destination preferences
 
 ## Video Preview
+
 ![0503](https://github.com/user-attachments/assets/f027e685-c130-4952-bf48-1c060c6f1092)
 
 ## [Link for Deployed Web Page](https://teamsoftware-engineering.vercel.app/)
@@ -148,14 +150,17 @@ def _get_route(start, end):
 ## Screenshots
 
 ### User Input Form
+
 ![User Input Form](./assets/images/user_input_form_1_step.png)
 *The main form where users enter their availability and preferences*
 
 ### Location Selection
+
 ![Location Selection](./assets/images/location_selection_2_step.png)
 *The application suggests personalized options based on user input*
 
 ### Route Map Display
+
 ![Route Display](./assets/images/map_illustration_3_step.png)
 *Interactive map showing the route to the selected destination*
 
@@ -170,6 +175,7 @@ def _get_route(start, end):
 ## Local Development
 
 ### Prerequisites
+
 - Python 3.8+
 - GraphHopper API key
 - Google API key with Gemini access
@@ -180,11 +186,12 @@ def _get_route(start, end):
 1. Clone the repository:
 2. Install requirements
 
-```bash
-pip install -r requirement.txt
-```
+    ```bash
+    pip install -r requirement.txt
+    ```
+
 3. Run project
 
-```bash
-uvicorn src:app --host localhost --port 10002
-```
+    ```bash
+    uvicorn src:app --host localhost --port 10002
+    ```
