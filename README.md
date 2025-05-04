@@ -15,7 +15,7 @@ Leisure solves the common problem of "What should I do today?" by suggesting per
 
 - [Overview](#overview)
 - [Video Preview](#video-preview)
-- [Live Demo](#link-for-deployed-web-page)
+- [Live Demo](#project-links)
 - [Team Members](#team-members)
 - [Team Contributions](#team-contributions)
 - [Features](#features)
@@ -33,7 +33,13 @@ Leisure solves the common problem of "What should I do today?" by suggesting per
 
 ![0503](https://github.com/user-attachments/assets/f027e685-c130-4952-bf48-1c060c6f1092)
 
-## [Link for Deployed Web Page](https://teamsoftware-engineering.vercel.app/)
+## Project Links
+
+You can find each project component with these links:
+
+- [Link for Deployed Web Page](https://teamsoftware-engineering.vercel.app/)
+- [Link for Presentation ](https://www.canva.com/design/DAGmWblh8hE/C40kGrze6mvJvN7GA9tmvw/view?utm_content=DAGmWblh8hE&utm_campaign=share_your_design&utm_medium=link2&utm_source=shareyourdesignpanel)
+- [Link For Video Material](https://drive.google.com/drive/folders/1vQv5nI1y9LqryuXAyklIX6_5iZ16I5Qi?usp=sharing)
 
 ## Team Members
 
